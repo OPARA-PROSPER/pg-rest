@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "create": "node ./services/db createTables",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "jasmine": "node node_modules/jasmine/bin/jasmine"
   },
   "keywords": [
     "api",
@@ -26,6 +27,7 @@
     "save-dev": "0.0.1-security"
   },
   "devDependencies": {
-    "eslint": "^6.6.0"
+    "eslint": "^6.6.0",
+    "request": "^2.88.0"
   }
 }
