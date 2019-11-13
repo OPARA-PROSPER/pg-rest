@@ -57,7 +57,7 @@ app.post('/students', (req, res) => {
       done();
 
       if(error) {
-        res.json(400).json({
+        res.status(400).json({
           status: 'error',
           message: error,
         });
@@ -70,6 +70,8 @@ app.post('/students', (req, res) => {
     })
   })
 })
+
+module.exports = app;
 
 app.listen(port, () => {
   console.log(`Express server live on port:${port}`);
