@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
   res.send('Welcome to node-postgres');
 })
 
-app.get('/student', (req, res) => {
+app.get('/students', (req, res) => {
   pool.connect((err, client, done) => {
     const query = 'SELECT * FROM students';
 
@@ -40,7 +40,7 @@ app.get('/student', (req, res) => {
   });
 });
 
-app.post('/student', (req, res) => {
+app.post('/students', (req, res) => {
   const data = {
     name: req.body.name,
     age: req.body.age,
