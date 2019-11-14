@@ -8,10 +8,6 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.get('/', (req, res) => {
-  res.send('Welcome to node-postgres');
-})
-
 app.get('/students', (req, res) => {
   pool.connect((err, client, done) => {
     const query = 'SELECT * FROM students';
@@ -63,7 +59,7 @@ app.post('/students', (req, res) => {
         });
       }
 
-      res.status(202).send({
+      res.status(200).send({
         status: 'success',
         data: result.rows[0],
       })
